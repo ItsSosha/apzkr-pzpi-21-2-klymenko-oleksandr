@@ -1,0 +1,6 @@
+.root {
+  & * {
+    color: inherit;
+    background-color: inherit;
+  }
+}

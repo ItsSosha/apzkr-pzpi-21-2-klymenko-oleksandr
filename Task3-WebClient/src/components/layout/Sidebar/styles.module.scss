@@ -1,0 +1,9 @@
+.link {
+  font-size: var(--mantine-font-size-lg);
+}
+
+:global(.active) {
+  & .link {
+    color: white;
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "auth": {
+    "form": {
+      "email": "E-mail",
+      "password": "Password",
+      "confirmPassword": "Confirm password",
+      "signIn": "Sign in",
+      "logOut": "Log out",
+      "error": "Invalid email or password. Please try again"
+    }
+  },
+  "navigation": {
+    "gym": "Gyms",
+    "content": "Articles",
+    "admins": "Admins",
+    "backup": "Backups"
+  },
+  "gym": {
+    "new": "Create a new gym",
+    "edit": "Editing gym {{name}}",
+    "properties": {
+      "name": "Name",
+      "address": "Address"
+    }
+  },
+  "article": {
+    "new": "Create a new article",
+    "edit": "Editing article \"{{title}}\"",
+    "properties": {
+      "title": "Title",
+      "author": "Author",
+      "content": "Content",
+      "tags": "Tags",
+      "cover": "Cover"
+    },
+    "form": {
+      "file": "Cover image"
+    }
+  },
+  "admin": {
+    "new": "Create a new admin",
+    "edit": "Editing admin {{name}} {{surname}}",
+    "properties": {
+      "name": "Name",
+      "surname": "Surname",
+      "email": "E-mail",
+      "password": "Password",
+      "isAdmin": "Is admin"
+    }
+  },
+  "backup": {
+    "properties": {
+      "date": "Date",
+      "size": "Size"
+    }
+  },
+  "common": {
+    "create": "Create",
+    "save": "Save",
+    "delete": "Delete",
+    "new": "New"
+  }
+}
