@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "author": "Олександр Клименко",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": 0,
+      "left": 4.84,
+      "attrs": { "env": "micropython-20231227-v1.22.0" }
+    },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -143.7, "left": 23.4, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -109.2,
+      "left": 157.4,
+      "attrs": { "color": "red" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "esp:15", "dht1:SDA", "green", [ "h86.4", "v-182.4", "h-144.1" ] ],
+    [ "dht1:GND", "esp:GND.1", "black", [ "v9.6", "h-96", "v172.8" ] ],
+    [ "dht1:VCC", "esp:3V3", "red", [ "h-38.4", "v57.6" ] ],
+    [ "led1:A", "esp:18", "green", [ "v0" ] ],
+    [ "esp:GND.3", "led1:C", "black", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
