@@ -2,6 +2,7 @@ import {
   Button,
   Center,
   Paper,
+  PasswordInput,
   Stack,
   Text,
   TextInput,
@@ -71,7 +72,7 @@ export const SignInPage = () => {
             size="lg"
             label={t("auth:form:email")}
           />
-          <TextInput
+          <PasswordInput
             {...register("password")}
             error={errors.password?.message}
             size="lg"

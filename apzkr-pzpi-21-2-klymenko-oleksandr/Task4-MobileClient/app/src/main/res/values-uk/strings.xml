@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Fit guru</string>
+    <string name="sign_in">Увійти</string>
+    <string name="no_account">Немає акаунту? Зареєструйтеся</string>
+    <string name="sign_up">Зареєструватися</string>
+    <string name="have_account">Вже зареєстровані? Увійдіть</string>
+    <string name="auth_error">Помилка автентифікації</string>
+    <string name="sign_out">Вийти</string>
+    <string name="email">Електронна пошта</string>
+    <string name="password">Пароль</string>
+    <string name="start_date">Початок</string>
+    <string name="end_date">Кінець</string>
+    <string name="gym">Зала</string>
+    <string name="measurements">Показники</string>
+    <string name="recommendations">Рекомендації</string>
+    <string name="get_recommendations">Отримати рекомендації</string>
+    <string name="finish_training">Закінчити тренування</string>
+    <string name="trainings">Тренування</string>
+    <string name="gyms">Спортивні зали</string>
+    <string name="articles">Статті</string>
+    <string name="search">Search</string>
+    <string name="tags">Теги</string>
+    <string name="author">Автор</string>
+</resources>

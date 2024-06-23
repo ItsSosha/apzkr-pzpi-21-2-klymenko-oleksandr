@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "851756300269",
+    "project_id": "testproject-d6a6a",
+    "storage_bucket": "testproject-d6a6a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:851756300269:android:493bf92caaa8230f5959e4",
+        "android_client_info": {
+          "package_name": "com.oleksandrklymenko.fitguru"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCS6BBhkuA7EdO24gX9uoxr4qETjKcXxQw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
