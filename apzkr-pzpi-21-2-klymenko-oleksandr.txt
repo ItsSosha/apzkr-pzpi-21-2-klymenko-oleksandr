@@ -585,10 +585,10 @@ IoT-пристрій спілкуватиметься із серверною ч
 
 
 1.	Репозиторій проєкту на платформі Github. URL: https://github.com/NureKlymenkoOleksandr/apzkr-pzpi-21-2-klymenko-oleksandr (дата звернення: 21.06.2024).
-2.	NestJS Documentation. NestJS –  A progressive Node.js framework. URL: https://docs.nestjs.com/ (дата звернення: 21.06.2004).
-3.	Wokwi Documentation. Wokwi –  Online ESP32, STM32, Arduino Simulator. URL: https://docs.wokwi.com/ (дата звернення: 21.06.2004).
-4.	React Documentation. React. URL: https://react.dev/learn (дата звернення: 21.06.2004).
-5.	Jetpack Compose Documentation. Google. URL: https://developer.android.com/develop/ui/compose/documentation (дата звернення: 21.06.2004).
+2.	NestJS Documentation. NestJS –  A progressive Node.js framework. URL: https://docs.nestjs.com/ (дата звернення: 21.06.2024).
+3.	Wokwi Documentation. Wokwi –  Online ESP32, STM32, Arduino Simulator. URL: https://docs.wokwi.com/ (дата звернення: 21.06.2024).
+4.	React Documentation. React. URL: https://react.dev/learn (дата звернення: 21.06.2024).
+5.	Jetpack Compose Documentation. Google. URL: https://developer.android.com/develop/ui/compose/documentation (дата звернення: 21.06.2024).
 6.	Відеозапис функціонального тестування розробленої програмної системи. URL: https://youtu.be/p3MJ42MAeTI (дата звернення 23.06.2024).
  
 ДОДАТОК А
