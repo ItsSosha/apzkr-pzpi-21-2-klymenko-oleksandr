@@ -1,4 +1,5 @@
 import { deleteAdmin } from "@/api/admin";
+import { useErrorSnackbar } from "@/hooks/useErrorSnackbar";
 import { User } from "@/types/models";
 import { Button, Table } from "@mantine/core";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
@@ -13,12 +14,14 @@ export const AdminList = ({ admins }: AdminListProps) => {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const queryClient = useQueryClient();
+  const onError = useErrorSnackbar();
 
   const deleteMutation = useMutation({
     mutationFn: deleteAdmin,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["admins"] });
     },
+    onError,
   });
 
   const tableRows = admins.map((item) => (

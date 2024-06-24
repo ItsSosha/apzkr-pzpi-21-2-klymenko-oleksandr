@@ -5,15 +5,18 @@ import { FaRegSquarePlus } from "react-icons/fa6";
 import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { getAdmins } from "@/api/admin";
+import { useErrorSnackbar } from "@/hooks/useErrorSnackbar";
 
 export const AdminListPage = () => {
   const { t } = useTranslation();
 
-  const { data, isFetching } = useQuery({
+  const { data, isFetching, error } = useQuery({
     queryKey: ["admins"],
     queryFn: getAdmins,
     staleTime: 1000 * 60,
   });
+
+  useErrorSnackbar(error);
 
   if (isFetching) {
     return <Loader />;

@@ -14,6 +14,7 @@ import { Controller, useForm } from "react-hook-form";
 import { MarkdownInput } from "@/components/MarkdownInput";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { updateArticle, createArticle } from "@/api/articles";
+import { useErrorSnackbar } from "@/hooks/useErrorSnackbar";
 
 interface ContentFormState {
   title: string;
@@ -27,6 +28,7 @@ export const ContentPage = () => {
   const location = useLocation();
   const queryClient = useQueryClient();
   const navigate = useNavigate();
+  const onError = useErrorSnackbar();
 
   const contentData = location.state as Article | null;
   const editing = !!contentData;
@@ -36,6 +38,7 @@ export const ContentPage = () => {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["articles"] });
     },
+    onError,
   });
 
   const updateMutation = useMutation({
@@ -43,6 +46,7 @@ export const ContentPage = () => {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["articles"] });
     },
+    onError,
   });
 
   const {

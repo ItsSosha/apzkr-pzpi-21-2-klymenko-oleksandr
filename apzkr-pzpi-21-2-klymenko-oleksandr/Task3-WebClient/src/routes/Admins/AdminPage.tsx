@@ -13,6 +13,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { createAdmin, updateAdmin } from "@/api/admin";
+import { useErrorSnackbar } from "@/hooks/useErrorSnackbar";
 
 type AdminFormState = {
   email: string;
@@ -27,6 +28,7 @@ export const AdminPage = () => {
   const location = useLocation();
   const queryClient = useQueryClient();
   const navigate = useNavigate();
+  const onError = useErrorSnackbar();
 
   const adminData = location.state as User | null;
   const editing = !!adminData;
@@ -36,6 +38,7 @@ export const AdminPage = () => {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["admins"] });
     },
+    onError,
   });
 
   const updateMutation = useMutation({
@@ -43,6 +46,7 @@ export const AdminPage = () => {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["admins"] });
     },
+    onError,
   });
 
   const {

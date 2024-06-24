@@ -58,6 +58,7 @@
     "create": "Create",
     "save": "Save",
     "delete": "Delete",
-    "new": "New"
+    "new": "New",
+    "errorOccured": "An error has occured!"
   }
 }

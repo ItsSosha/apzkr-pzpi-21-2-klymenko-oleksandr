@@ -1,4 +1,5 @@
 import { deleteGym } from "@/api/gyms";
+import { useErrorSnackbar } from "@/hooks/useErrorSnackbar";
 import { Gym } from "@/types/models";
 import { Button, Table } from "@mantine/core";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
@@ -13,12 +14,14 @@ export const GymList = ({ gyms }: GymListProps) => {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const queryClient = useQueryClient();
+  const onError = useErrorSnackbar();
 
   const deleteMutation = useMutation({
     mutationFn: deleteGym,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["gyms"] });
     },
+    onError,
   });
 
   const tableRows = gyms.map((item) => (

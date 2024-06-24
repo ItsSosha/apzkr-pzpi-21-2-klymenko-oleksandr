@@ -15,6 +15,7 @@ import { auth } from "@/lib/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useErrorSnackbar } from "@/hooks/useErrorSnackbar";
 
 type SignInFormState = {
   email: string;
@@ -45,17 +46,20 @@ export const SignInPage = () => {
     resolver: zodResolver(schema),
     mode: "onBlur",
   });
-  const [authError, setAuthError] = useState(false);
+  const [authError, setAuthError] = useState<Error | null>(null);
 
   const onSubmit = async (data: SignInFormState) => {
     try {
       await signInWithEmailAndPassword(auth, data.email, data.password);
       navigate("/");
     } catch (error) {
-      console.error(`Authentication failed: ${error}`);
-      setAuthError(true);
+      if (error instanceof Error) {
+        setAuthError(error);
+      }
     }
   };
+
+  useErrorSnackbar(authError);
 
   return (
     <Center h="calc(100vh - var(--app-shell-header-height, 0px) - var(--app-shell-footer-height, 40px))">

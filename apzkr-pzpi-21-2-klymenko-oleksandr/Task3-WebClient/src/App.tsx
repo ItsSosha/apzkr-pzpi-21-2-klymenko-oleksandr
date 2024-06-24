@@ -6,6 +6,7 @@ import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import { router } from "./utils/router";
 import styles from "./App.module.scss";
 import { AuthProvider } from "./contexts/Auth";
+import { SnackbarProvider } from "notistack";
 
 const queryClient = new QueryClient();
 
@@ -21,9 +22,11 @@ function App() {
   return (
     <AuthProvider>
       <MantineProvider theme={theme}>
-        <QueryClientProvider client={queryClient}>
-          <RouterProvider router={router} />
-        </QueryClientProvider>
+        <SnackbarProvider>
+          <QueryClientProvider client={queryClient}>
+            <RouterProvider router={router} />
+          </QueryClientProvider>
+        </SnackbarProvider>
       </MantineProvider>
     </AuthProvider>
   );

@@ -5,6 +5,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { createGym, updateGym } from "@/api/gyms";
+import { useErrorSnackbar } from "@/hooks/useErrorSnackbar";
 
 type GymFormState = {
   name: string;
@@ -16,6 +17,7 @@ export const GymPage = () => {
   const location = useLocation();
   const queryClient = useQueryClient();
   const navigate = useNavigate();
+  const onError = useErrorSnackbar();
 
   const gymData = location.state as Gym | null;
   const editing = !!gymData;
@@ -25,6 +27,7 @@ export const GymPage = () => {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["gyms"] });
     },
+    onError,
   });
 
   const updateMutation = useMutation({
@@ -32,6 +35,7 @@ export const GymPage = () => {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["gyms"] });
     },
+    onError,
   });
 
   const {
